@@ -54,7 +54,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="mt-4 text-sm sm:text-base md:text-lg text-white"
+          className="mt-4 text-sm sm:text-base font-semibold md:text-lg text-white"
         >
           Transforming Homes Since 2002 — Interior Design, Furniture, Electrical Work, Painting & False Ceiling.
         </motion.p>
