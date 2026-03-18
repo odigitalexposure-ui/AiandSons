@@ -1,18 +1,42 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
+
+const images = [
+  "/gallery/1.jpeg",
+  "/gallery/2.jpeg",
+  "/gallery/3.jpeg",
+  "/gallery/4.jpeg",
+  "/gallery/5.jpeg",
+];
 
 const Hero = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3000); // change image every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative w-full h-[100vh] flex items-center justify-center overflow-hidden">
 
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img
-          src="/gallery/3.jpeg" // 👉 replace later with client image
-          alt="Interior"
-          className="w-full h-full object-cover"
+      {/* Background Slides */}
+      {images.map((img, index) => (
+        <motion.img
+          key={index}
+          src={img}
+          alt={`Slide ${index + 1}`}
+          className="absolute inset-0 w-full h-full object-cover"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: current === index ? 1 : 0 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
         />
-        <div className="absolute inset-0 bg-black/60"></div>
-      </div>
+      ))}
+
+      {/* Overlay for darker effect */}
+      <div className="absolute inset-0 bg-black/20"></div>
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-3xl">
@@ -30,10 +54,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="mt-4 text-sm sm:text-base md:text-lg text-gray-200"
+          className="mt-4 text-sm sm:text-base md:text-lg text-white"
         >
-          Transforming Homes Since 2002 — Interior Design, Furniture,
-          Electrical Work, Painting & False Ceiling.
+          Transforming Homes Since 2002 — Interior Design, Furniture, Electrical Work, Painting & False Ceiling.
         </motion.p>
 
         <motion.div

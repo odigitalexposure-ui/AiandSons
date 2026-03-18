@@ -15,7 +15,7 @@ const AboutSection = () => {
           className="w-full"
         >
           <img
-            src="/about.jpg" // 👉 add later
+            src="/about.png" // 👉 add later
             alt="About"
             className="w-full h-[300px] md:h-[400px] object-cover rounded-2xl shadow-lg"
           />

@@ -136,6 +136,7 @@ const Contact = () => {
             <iframe
               title="Ghoni, Majher Para, New Town, Kolkata"
               src="https://www.google.com/maps?q=Ghoni,+Majher+Para,+New+Town,+Kolkata+700157&output=embed"
+              // src="https://www.google.com/maps/search/Vill+%2B+P.O.+-+Ghoni,+Majher+Para,+P.S.+-+New+Town,+Kolkata+-+700+157/@22.5481118,88.2971092,12z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D"
               className="w-full h-full border-0"
               loading="lazy"
             />

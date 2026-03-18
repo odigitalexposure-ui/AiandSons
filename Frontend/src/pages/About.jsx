@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+// import photo from '../../public/about.png'
 
 const About = () => {
   return (
@@ -40,7 +41,7 @@ const About = () => {
           viewport={{ once: true }}
         >
           <img
-            src="/about.jpg"
+            src="/about.png"
             alt="About"
             className="w-full h-[300px] md:h-[400px] object-cover rounded-2xl shadow-lg"
           />

@@ -1,5 +1,6 @@
 import gallery from "../data/gallery";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Gallery = () => {
   return (
@@ -18,7 +19,7 @@ const Gallery = () => {
       {/* Grid */}
       <div className="mt-12 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 px-4 max-w-7xl mx-auto">
 
-        {gallery.map((item, index) => (
+        {gallery.slice(0, 5).map((item, index) => (  // ✅ only 5 photos
           <motion.div
             key={item.id}
             className="overflow-hidden rounded-xl"
@@ -30,12 +31,21 @@ const Gallery = () => {
             <img
               src={item.img}
               alt="work"
-              loading="lazy"  // 🔥 optimization
+              loading="lazy"
               className="w-full h-40 sm:h-44 md:h-48 object-cover hover:scale-110 transition duration-300"
             />
           </motion.div>
         ))}
 
+      </div>
+
+      {/* View More Button */}
+      <div className="mt-12 text-center">
+        <Link to="/gallery">
+          <button className="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-pink-500 text-white font-medium shadow-lg hover:scale-105 transition duration-300">
+            View More
+          </button>
+        </Link>
       </div>
 
     </section>
