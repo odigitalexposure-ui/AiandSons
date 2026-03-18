@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import WhatsAppButton from "../components/WhatsappButton";
 
 const MainLayout = () => {
   return (
@@ -13,7 +14,7 @@ const MainLayout = () => {
       <main className="flex-grow w-full max-w-full mx-auto ">
         <Outlet />
       </main>
-
+      <WhatsAppButton/>
       {/* Footer */}
       <Footer />
 
