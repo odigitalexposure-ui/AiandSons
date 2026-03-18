@@ -67,7 +67,7 @@ const Footer = () => {
 
       {/* Bottom */}
       <div className="border-t border-white/10 mt-10 pt-6 text-center text-gray-500 text-sm">
-        © {new Date().getFullYear()} Ali & Sons Interior. All rights reserved.
+        © {new Date().getFullYear()} Ali & Sons Interior.Design and developed by Digital Exposure Online Services
       </div>
 
     </footer>

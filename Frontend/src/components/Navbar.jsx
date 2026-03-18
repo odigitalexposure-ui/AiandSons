@@ -34,7 +34,7 @@ const Navbar = () => {
 
                     {/* Logo / Brand */}
                     <Link to="/" className="text-2xl font-bold text-white">
-                        Ali & Sons
+                        Ali & Sons Interior
                     </Link>
 
                     {/* Desktop Menu */}
